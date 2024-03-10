@@ -30,3 +30,32 @@ STEPS:
  * you can create a readOnly member, by just implementing getter funtion for that
  * Or you can also create a writeOnly member, by just implementing setter function for that
 */
+package com.example;
+
+public class RWOnly {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+package com.example;
+
+public class Main {
+    public static void main(String[] args) {
+        RWOnly obj = new RWOnly();
+
+        // Trying to set a value to name directly, this will give an error
+        // obj.name = "John Doe";
+
+        // Setting a value to name using setter function
+        obj.setName("John Doe");
+
+        // Accessing the value of name using getter function
+        System.out.println(obj.getName());
+    }
+}
